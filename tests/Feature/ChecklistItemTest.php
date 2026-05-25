@@ -199,12 +199,12 @@ $response = $this->actingAs($this->staff, 'sanctum')
         $response->assertStatus(200)
             ->assertJsonPath('status', 'success')
             ->assertJsonPath('data.item_name', 'Bersihkan Lantai (Updated)')
-            ->assertJsonPath('data.status', 'Inactive');
+            ->assertJsonPath('data.status', 'inactive');
 
         $this->assertDatabaseHas('checklist_items', [
             'id'        => $this->item->id,
             'item_name' => 'Bersihkan Lantai (Updated)',
-            'status'    => 'Inactive',
+            'status'    => 'inactive',
         ]);
     }
 

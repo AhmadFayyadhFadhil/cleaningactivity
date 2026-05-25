@@ -83,8 +83,8 @@ class DashboardController extends Controller
             ])
             ->get()
             ->map(function ($area) {
-                $totalSchedules = $area->schedules_count ?? 0;
-                $completedSchedules = $area->completed_schedules_count ?? 0;
+                 $totalSchedules = $area->schedules_count ?? 0;
+                $completedSchedules = $area->completed_schedules ?? 0;
                 $completionRate = $totalSchedules > 0 
                     ? round(($completedSchedules / $totalSchedules) * 100, 2)
                     : 0;
@@ -100,7 +100,7 @@ class DashboardController extends Controller
                     'schedule_frequency' => $area->schedule_frequency,
                     'total_schedules' => $totalSchedules,
                     'completed_schedules' => $completedSchedules,
-                    'in_progress_schedules' => $area->in_progress_schedules_count ?? 0,
+                    'in_progress_schedules' => $area->in_progress_schedules ?? 0,
                     'completion_rate' => $completionRate . '%',
                 ];
             });

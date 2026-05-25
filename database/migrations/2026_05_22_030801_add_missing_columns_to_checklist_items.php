@@ -28,7 +28,7 @@ return new class extends Migration
                 $table->text('instruction')->nullable()->after('description');
             }
             if (!Schema::hasColumn('checklist_items', 'status')) {
-                $table->enum('status', ['Active', 'Inactive'])->default('Active')->after('instruction');
+                $table->enum('status', ['active', 'inactive'])->default('active')->after('instruction');
             }
         });
     }

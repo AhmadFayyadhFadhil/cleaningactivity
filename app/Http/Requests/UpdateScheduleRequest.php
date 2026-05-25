@@ -8,7 +8,7 @@ class UpdateScheduleRequest extends FormRequest
 {
     public function authorize(): bool
     {
-        return $this->user()->can('create-schedules');
+        return $this->user()->can('create-schedules') || $this->user()->can('manage-schedules');
     }
 
     public function rules(): array

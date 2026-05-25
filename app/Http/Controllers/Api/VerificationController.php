@@ -12,6 +12,11 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class VerificationController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('permission:verify-schedules');
+    }
+
     /**
      * Display pending verifications.
      */

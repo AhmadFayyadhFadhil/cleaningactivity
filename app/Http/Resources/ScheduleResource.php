@@ -17,7 +17,7 @@ class ScheduleResource extends JsonResource
                 'area_name' => $this->area?->area_name,
             ],
             'schedule_date' => $this->schedule_date?->format('Y-m-d'),
-            'schedule_time' => $this->schedule_time?->format('H:i'),
+            'schedule_time' => $this->schedule_time ? date('H:i', strtotime($this->schedule_time)) : null,
             'assigned_to' => [
                 'id' => $this->assignedTo?->id,
                 'name' => $this->assignedTo?->name,

@@ -17,11 +17,11 @@ class StoreAreaRequest extends FormRequest
             'area_code' => 'required|string|unique:areas,area_code|max:50',
             'area_name' => 'required|string|max:255',
             'location' => 'required|string|max:255',
-            'floor' => 'required|string|max:50',
+'floor' => 'required',
             'building' => 'required|string|max:255',
             'pic_user_id' => 'required|exists:users,id',
-            'status' => 'required|in:active,inactive',
-            'schedule_frequency' => 'required|in:daily,weekly,monthly',
+'status' => 'required|string',
+'schedule_frequency' => 'required|string',
         ];
     }
 

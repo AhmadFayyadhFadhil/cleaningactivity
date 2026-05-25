@@ -31,10 +31,10 @@ return new class extends Migration
                 $table->foreignId('pic_user_id')->nullable()->constrained('users')->onDelete('set null')->after('building');
             }
             if (!Schema::hasColumn('areas', 'status')) {
-                $table->enum('status', ['Active', 'Inactive'])->default('Active')->after('pic_user_id');
+                $table->enum('status', ['active', 'inactive'])->default('active')->after('pic_user_id');
             }
             if (!Schema::hasColumn('areas', 'schedule_frequency')) {
-                $table->string('schedule_frequency')->default('Daily')->after('status');
+                $table->string('schedule_frequency')->default('daily')->after('status');
             }
         });
     }

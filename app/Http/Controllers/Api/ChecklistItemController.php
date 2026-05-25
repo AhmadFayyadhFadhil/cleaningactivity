@@ -12,6 +12,18 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class ChecklistItemController extends Controller
 {
+public function __construct()
+    {
+        // List/show: staff can view with view-checklist-items, admin can with manage-checklist-items
+        $this->middleware('permission:view-checklists|view-checklist-items|manage-checklists|manage-checklist-items')
+            ->only(['index', 'show']);
+
+        // Create/update/delete: only admin with manage permissions
+        $this->middleware('permission:manage-checklist-items|manage-checklists')
+            ->only(['store', 'update', 'destroy']);
+    }
+
+
     /**
      * Display a listing of the resource.
      */

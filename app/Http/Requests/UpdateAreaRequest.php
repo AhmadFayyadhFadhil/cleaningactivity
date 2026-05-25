@@ -13,15 +13,18 @@ class UpdateAreaRequest extends FormRequest
 
     public function rules(): array
     {
+        $area = $this->route('area');
+        $areaId = $area instanceof \App\Models\Area ? $area->id : $area;
+
         return [
-            'area_code' => 'sometimes|required|string|unique:areas,area_code,' . $this->route('area') . '|max:50',
+            'area_code' => 'sometimes|required|string|unique:areas,area_code,' . $areaId . '|max:50',
             'area_name' => 'sometimes|required|string|max:255',
             'location' => 'sometimes|required|string|max:255',
-            'floor' => 'sometimes|required|string|max:50',
+'floor' => 'sometimes|required',
             'building' => 'sometimes|required|string|max:255',
             'pic_user_id' => 'sometimes|required|exists:users,id',
-            'status' => 'sometimes|required|in:active,inactive',
-            'schedule_frequency' => 'sometimes|required|in:daily,weekly,monthly',
+'status' => 'sometimes|required|string',
+'schedule_frequency' => 'sometimes|required|string',
         ];
     }
 

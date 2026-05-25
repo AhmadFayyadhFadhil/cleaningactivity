@@ -6,9 +6,18 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class StoreChecklistItemRequest extends FormRequest
 {
+    protected function prepareForValidation(): void
+    {
+        if ($this->has('status')) {
+            $this->merge([
+                'status' => strtolower((string) $this->input('status')),
+            ]);
+        }
+    }
+
     public function authorize(): bool
     {
-        return $this->user()->can('manage-checklist-items');
+        return $this->user()->can('manage-checklist-items') || $this->user()->can('manage-checklists');
     }
 
     public function rules(): array
@@ -19,7 +28,11 @@ class StoreChecklistItemRequest extends FormRequest
             'category' => 'required|string|max:100',
             'description' => 'nullable|string',
             'instruction' => 'nullable|string',
-            'status' => 'required|in:active,inactive',
+'status' => 'required|string|in:active,inactive',
+
+
+
+
         ];
     }
 

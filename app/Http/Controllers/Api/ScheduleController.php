@@ -12,6 +12,14 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class ScheduleController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('permission:view-schedules|manage-schedules|create-schedules')->only(['index', 'show']);
+        $this->middleware('permission:manage-schedules|create-schedules')->except(['index', 'show']);
+
+
+    }
+
     /**
      * Display a listing of the resource.
      */

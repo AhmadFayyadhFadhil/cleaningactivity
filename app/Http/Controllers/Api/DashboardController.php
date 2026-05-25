@@ -11,11 +11,17 @@ use Illuminate\Http\JsonResponse;
 
 class DashboardController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('permission:view-dashboard');
+    }
+
     /**
      * Get dashboard summary statistics.
      */
     public function summary(): JsonResponse
     {
+
         $totalAreas = Area::count();
         $totalSchedules = CleaningSchedule::count();
         $completedSchedules = CleaningSchedule::where('status', 'completed')->count();

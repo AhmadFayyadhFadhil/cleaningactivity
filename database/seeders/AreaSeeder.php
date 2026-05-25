@@ -31,8 +31,8 @@ class AreaSeeder extends Seeder
                 'floor' => 1,
                 'building' => 'Building A',
                 'pic_user_id' => $users[0] ?? null,
-                'status' => 'Active',
-                'schedule_frequency' => 'Daily',
+                'status' => 'active',
+                'schedule_frequency' => 'daily',
             ],
             [
                 'area_code' => 'AREA002',
@@ -41,8 +41,8 @@ class AreaSeeder extends Seeder
                 'floor' => 2,
                 'building' => 'Building A',
                 'pic_user_id' => $users[1] ?? $users[0],
-                'status' => 'Active',
-                'schedule_frequency' => 'Daily',
+                'status' => 'active',
+                'schedule_frequency' => 'daily',
             ],
             [
                 'area_code' => 'AREA003',
@@ -51,8 +51,8 @@ class AreaSeeder extends Seeder
                 'floor' => 3,
                 'building' => 'Building A',
                 'pic_user_id' => $users[2] ?? $users[0],
-                'status' => 'Active',
-                'schedule_frequency' => 'Daily',
+                'status' => 'active',
+                'schedule_frequency' => 'daily',
             ],
             [
                 'area_code' => 'AREA004',
@@ -61,8 +61,8 @@ class AreaSeeder extends Seeder
                 'floor' => 0,
                 'building' => 'Building A',
                 'pic_user_id' => $users[0] ?? null,
-                'status' => 'Active',
-                'schedule_frequency' => 'Daily',
+                'status' => 'active',
+                'schedule_frequency' => 'daily',
             ],
             [
                 'area_code' => 'AREA005',
@@ -71,8 +71,8 @@ class AreaSeeder extends Seeder
                 'floor' => 1,
                 'building' => 'Building A',
                 'pic_user_id' => $users[1] ?? $users[0],
-                'status' => 'Active',
-                'schedule_frequency' => 'Daily',
+                'status' => 'active',
+                'schedule_frequency' => 'daily',
             ],
             [
                 'area_code' => 'AREA006',
@@ -81,8 +81,8 @@ class AreaSeeder extends Seeder
                 'floor' => 0,
                 'building' => 'Building A',
                 'pic_user_id' => $users[2] ?? $users[0],
-                'status' => 'Active',
-                'schedule_frequency' => 'Daily',
+                'status' => 'active',
+                'schedule_frequency' => 'daily',
             ],
             [
                 'area_code' => 'AREA007',
@@ -91,8 +91,8 @@ class AreaSeeder extends Seeder
                 'floor' => 1,
                 'building' => 'Building B',
                 'pic_user_id' => $users[0] ?? null,
-                'status' => 'Active',
-                'schedule_frequency' => 'Weekly',
+                'status' => 'active',
+                'schedule_frequency' => 'weekly',
             ],
             [
                 'area_code' => 'AREA008',
@@ -101,8 +101,8 @@ class AreaSeeder extends Seeder
                 'floor' => -1,
                 'building' => 'Building A',
                 'pic_user_id' => $users[1] ?? $users[0],
-                'status' => 'Active',
-                'schedule_frequency' => 'Weekly',
+                'status' => 'active',
+                'schedule_frequency' => 'weekly',
             ],
         ];
 

@@ -12,6 +12,12 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class AreaController extends Controller
 {
+    public function __construct()
+    {
+        // Authorization level: tests only grant manage-areas.
+        $this->middleware('permission:manage-areas')->only(['index', 'show', 'store', 'update', 'destroy']);
+    }
+
     /**
      * Display a listing of the resource.
      */

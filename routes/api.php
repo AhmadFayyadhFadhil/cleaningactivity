@@ -18,13 +18,13 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/profile', [AuthController::class, 'profile']);
 
-    // Area management
+    // Area management (controller handles authorization)
     Route::apiResource('areas', AreaController::class);
 
-    // Checklist items
+    // Checklist items (controller handles authorization)
     Route::apiResource('checklist-items', ChecklistItemController::class);
 
-    // Schedule management
+    // Schedule management (controller handles authorization)
     Route::apiResource('schedules', ScheduleController::class);
 
     // Cleaning tasks (staff)
